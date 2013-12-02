@@ -61,6 +61,7 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+// Called to update metrics based on selected_states
 function update_calculations() {
 
 	// Loop through each HTML element that displays a metric (everything of the 'answer' class)
@@ -89,7 +90,6 @@ function update_calculations() {
 
 };
 
-
 // Click listener for each state
 $('.state').click(function(){
 
@@ -101,30 +101,28 @@ $('.state').click(function(){
 		// Run if clicked state is already selected		
 		$(this).css('fill','#DFE2DB');
 
+		// Since clicked_state has already been selected, remove it from selected_states
 		selected_states = jQuery.grep(selected_states,
 			function(value){
 				return value != clicked_state;
 			}
 		);
 
+		// Update metrics
 		update_calculations();
-		//console.log(clicked_state);
-		//console.log(selected_states.toString());
 
 	} else {
 
 		// Run if clicked state has not yet been selected
 		$(this).css('fill','#FFF056');
 
+		// Since clicked_state has not yet been selected, add it to selected_states
 		selected_states.push(clicked_state);
 
+		// Update metrics
 		update_calculations();
-		//console.log(clicked_state);
-		//console.log(selected_states.toString());
 
 	}
 
 });
 
-
-// LIST DATA SOURCES IN HTML
