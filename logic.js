@@ -1,4 +1,4 @@
-// State data
+// State data in JSON
 var state_stats = {
 "AL":{"population":"4822023","population_change":"18334","population_commute_change":"-35548","internet_users":"4448630","political_contributions_democrat":"661643","political_contributions_republican":"3014154"},
 "AK":{"population":"731449","population_change":"7589","population_commute_change":"6398","internet_users":"664369","political_contributions_democrat":"246967","political_contributions_republican":"315889"},
